@@ -14,7 +14,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" href="<?php echo base_url('assets/images/logo.jpg') ?>">
-
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type='text/javascript' src="<?php echo base_url('assets/js/select2/dist/js/select2.min.js');?>"></script>
  
@@ -124,9 +124,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="header-left">
                             <h3><?= $title; ?></h3>
                         </div>
-                        
-                        <div class="pull-left info">
-                        </div>
+                       
                     </div>
                     <div class="header-right">
                             <p>Welcome, <?php echo $this->session->userdata('nama'); ?> ! </p>

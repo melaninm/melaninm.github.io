@@ -86,10 +86,7 @@
 
 
                 <div class="card-footer">
-                    <div class="row form-group">
-                            <div class="col col-md-3"></div>
-                            <div class="col-12 col-md-9">
-                            <form action="<?= base_url('crudpinjamruangan/kembali/'); ?>" method="POST">
+                            <form action="<?= base_url('crudpinjamruangan/kembali_user/'); ?>" method="POST">
                                     <input type="hidden" name="id_pr" value="<?= $d->id_pr ?>">
                                     <input type="hidden" name="status" value="Dikembalikan">
                                     <input type="hidden" name="no_pr" value="<?= $d->no_pr ?>">
@@ -106,6 +103,3 @@
                 
             </div>
         </div>
-    </div>
-</div>
-</div>

@@ -81,9 +81,8 @@
                                             </table>
                                         </div>
                                         <div class="card-footer">
-                                            <form action="<?= base_url('crudpinjambarang/update/'); ?>" method="POST">
                                                 <input type="hidden" name="id_pb" value="<?= $detail[0]->id_pb ?>">
-                                                <input type="hidden" name="action" id="act_value">
+                                                
                                                 <?php if ($detail[0]->status === 'Pending')  : ?>
                                                     <button type="submit" class="btn btn-success" onclick="$('#act_value').val('Diterima');return confirm('Apakah Anda Yakin Menerima Peminjaman? ');" data-popup="tooltip" data-placement="top" title="Terima">Terima</button>
                                                     <button type="submit" class="btn btn-danger" onclick="$('#act_value').val('Ditolak');return confirm('Apakah Anda Yakin Menolak Peminjaman? ');" data-popup="tooltip" data-placement="top" title="Tolak">Tolak</button>
@@ -91,7 +90,7 @@
                                                 <?php elseif($detail[0]->status==="Diterima"): ?>
                                                     <button type="submit" disabled class="btn btn-success" onclick="$('#act_value').val('Diterima');return confirm('Apakah Anda Yakin Menerima Peminjaman? ');" data-popup="tooltip" data-placement="top" title="Terima">Terima</button>
                                                     <button type="submit" disabled class="btn btn-danger" onclick="$('#act_value').val('Ditolak');return confirm('Apakah Anda Yakin Menolak Peminjaman? ');" data-popup="tooltip" data-placement="top" title="Tolak">Tolak</button>
-                                                    <button type="submit" class="btn btn-secondary" onclick="$('#act_value').val('Dikembalikan');return confirm('Apakah Anda Yakin Barang sudah dikembalikan? ');" data-popup="tooltip" data-placement="top" title="Kembali">Dikembalikan</button>
+                                                    <button type="submit" class="btn btn-secondary" data-toggle="modal" data-target="#staticModal2" onclick="$('#act_value').val('Dikembalikan');" title="Kembali">Dikembalikan</button>
                                                 <?php endif; ?>
                                             </form>
                                         </div>
@@ -104,7 +103,33 @@
             </div>
         </div>
     </div>                                
-                    
+   
+   <div class="modal fade" id="staticModal2" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-sm" role="document">
+    <form action="<?= base_url('crudpinjambarang/update/'); ?>" method="POST">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticModalLabel">Konfirmasi Pengembalian</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Yakin ingin mengembalikan peminjaman ini?
+        </p>
+      </div>
+      <input type="hidden" name="action" id="act_value">
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+        <a type="button" class="btn btn-primary" href="<?php echo site_url('laporanbarang/kelaporan'); ?>">Ya, Kembalikan</a>
+      </div>
+    </div>
+</form>
+  </div>
+</div>
 
+
+<!-- return confirm('Apakah Anda Yakin Barang sudah dikembalikan? '); -->
 
                     

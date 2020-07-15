@@ -40,7 +40,9 @@
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label class=" form-control-label">Upload Surat</label> </div>
-                        <div class="col-12 col-md-9"><input type="file" id="surat" name="surat" class="filestyle" data-icon="false" required></div>
+                        <div class="col-12 col-md-9"><input type="file" id="surat" name="surat" class="filestyle" data-icon="false" required>
+                        <p>Tipe File : PDF / WORD / JPG / JPEG / PNG</p>
+                        </div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"></div>

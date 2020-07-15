@@ -94,7 +94,7 @@ class Crudpinjambarang extends CI_Controller
 
 		$detail = $this->mo_pinjambarang->get_detail($id);
 		$data['detail'] = $detail;
-		$data['menu2'] = $this->mo_menu->tampil();
+		$data['menu2'] = $this->mo_menu->tampiluser();
 		$data['title'] = 'Peminjaman Barang';
 		$data['page'] = 'barang/Vi_accBarang_user';
 		$this->load->view('menu2', $data);

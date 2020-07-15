@@ -60,7 +60,7 @@ class Mo_pinjambarang extends CI_Model
 		$data['tb_barang'] = $this->db->get($this->_table)->result();
 		$data['tbl_pinjambarang'] = $this->db->get_where($this->tbl_pinjambarang, $wn)->result();
 		$data['menu'] = $this->mo_menu->tampil();
-		$data['title'] = 'Peminjaman Barangx';
+		$data['title'] = 'Peminjaman Barang';
 		$data['page'] = 'barang/Vi_pinjambarang2';
 		$this->load->view('menu', $data);
 	}
@@ -91,7 +91,7 @@ class Mo_pinjambarang extends CI_Model
 
 		if ( ! $this->upload->do_upload('surat'))
 		{
-			redirect(site_url("Crudpinjambarang/kepinjambarang"));
+			redirect(site_url("Crudpinjambarang/kepinjambarang_user"));
 			return;
 		}
 

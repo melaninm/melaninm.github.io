@@ -65,6 +65,7 @@ class Laporanruangan extends CI_Controller
     public function search()
     {
         $keyword = $this->input->post('keyword');
+        $data['pagination'] = $this->pagination->create_links();
         $data['menu'] = $this->mo_menu->tampil();
         $data['title'] = 'Laporan Peminjaman Ruangan';
         $data['page'] = 'ruangan/Vi_laporan';

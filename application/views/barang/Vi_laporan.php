@@ -48,7 +48,7 @@
                                             <a class="btn btn-warning btn-sm" href="<?php echo site_url('laporanbarang/cetak/' . $br->id_pb); ?>" class="btn btn-small" target="_blank"><i class="fa fa-print"></i>Cetak</a>
 
                                             <a class="btn btn-danger btn-sm" href="<?php echo site_url('laporanbarang/hapus/' . $br->id_pb); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus ? ');" class="btn btn-small" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-trash-o"></i>Hapus</a>
-                            </div>
+                            
                                         </td>
                                         <?php
                                         if ($br->status == 'Ditolak') {
@@ -62,7 +62,7 @@
                                         }
 
                                         ?>
-                                  
+                                  </div>
                                     </tr>
                                 <?php } ?>
                             </tbody>

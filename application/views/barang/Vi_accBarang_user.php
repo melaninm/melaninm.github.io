@@ -83,9 +83,6 @@
 
 
                     <div class="card-footer">
-                        <div class="row form-group">
-                            <div class="col col-md-3"></div>
-                            <div class="col-12 col-md-9">
                                 
                                  <form action="<?= base_url('crudpinjambarang/kembali_user/'); ?>" method="POST">
                                     <input type="hidden" name="id_pb" value="<?= $detail[0]->id_pb ?>">
@@ -97,6 +94,3 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>

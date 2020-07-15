@@ -89,7 +89,7 @@ class Crudpinjamruangan extends CI_Controller
 
 		$detail = $this->mo_pinjamruangan->get_detail($id);
 		$data['detail'] = $detail;
-		$data['menu2'] = $this->mo_menu->tampil();
+		$data['menu2'] = $this->mo_menu->tampiluser();
 		$data['title'] = 'Peminjaman Ruangan';
 		$data['page'] = 'ruangan/Vi_accRuangan_user';
 		$this->load->view('menu2', $data);
@@ -157,6 +157,26 @@ class Crudpinjamruangan extends CI_Controller
 		if ($queryupdate) {
 			$pesansukses = '<div class="alert alert-success">Data berhasil diupdate</div>';
 			redirect('Laporanruangan/kelaporan');
+		}
+	}
+
+	public function kembali_user()
+	{
+		$id = $this->input->post('id_pr', TRUE);
+		$nopr = $this->input->post('no_pr', TRUE);
+		$nospt = $this->input->post('no_spt', TRUE);
+		$tanggal = $this->input->post('tanggal', TRUE);
+		$tanggalkembali = $this->input->post('tanggal_kembali', TRUE);
+		$nama1 = $this->input->post('nama1', TRUE);
+		$nama2 = $this->input->post('nama2', TRUE);
+		$tujuan = $this->input->post('tujuan', TRUE);
+		$status = $this->input->post('status', TRUE);
+
+		$queryupdate = $this->mo_pinjamruangan->kembali($id, $nopr, $nospt, $tanggal, $tanggalkembali, $nama1, $nama2, $tujuan, $status);
+
+		if ($queryupdate) {
+			$pesansukses = '<div class="alert alert-success">Data berhasil diupdate</div>';
+			redirect('Laporanruangan/kelaporan_user');
 		}
 	}
 
